@@ -1,8 +1,8 @@
 {
   "name": "rain-util-download",
-  "version": "0.3.8",
+  "version": "0.4.0",
   "author": "Max Millien",
-  "description": "Generator based, co/koa compatible file downloader",
+  "description": "Generator based, co/koa compatible file(s) downloader",
   "repository": {
     "type": "git",
     "url": "https://www.github.com/maxmill/rain-util-download.git"
@@ -12,7 +12,7 @@
   "scripts": {
     "clean": "npm cache clean && rm -rf node_modules bin data",
     "build": "babel lib -d bin",
-    "test": "tape ./test"
+    "test": "npm run build && tape ./test"
   },
   "keywords": [
     "koa",
@@ -22,6 +22,7 @@
     "requests",
     "co",
     "download",
+    "batch",
     "generators",
     "convenience"
   ],

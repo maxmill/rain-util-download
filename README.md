@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/rain-util-download.svg?style=flat-square)]()
 [![npm](https://img.shields.io/npm/dt/rain-util-download.svg)]()
 
-Generator based, co/koa compatible file downloader
+Generator based, co/koa compatible file(s) downloader
 
 ```
 npm i rain-util-download
