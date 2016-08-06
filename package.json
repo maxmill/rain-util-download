@@ -12,6 +12,7 @@
   "scripts": {
     "clean": "npm cache clean && rm -rf node_modules bin data",
     "build": "babel lib -d bin",
+    "lint":"eslint .",
     "test": "npm run build && tape ./test"
   },
   "keywords": [
@@ -28,16 +29,19 @@
   ],
   "dependencies": {
     "request": "2.x",
-    "thunkify-wrap": "1.x"
+    "thunkify-wrap": "1.x",
+    "tape-catch": "1.x",
+    "co-tape": "*"
   },
   "devDependencies": {
     "babel": "*",
     "babel-cli": "*",
     "babel-preset-es2015-node5": "*",
     "babel-preset-stage-3": "*",
-    "co-tape": "*",
-    "tape": "4.x",
-    "tape-catch": "1.x"
+    "eslint": "^3.2.0",
+    "eslint-config-airbnb-base": "^5.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "tape": "4.x"
   },
   "engines": {
     "node": ">= 4.2.0"

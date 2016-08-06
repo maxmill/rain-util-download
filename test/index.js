@@ -1,7 +1,7 @@
 const test = require('tape-catch');
 const path = require('path');
 const fs = require('fs');
-const $download =  require('../bin');
+const download =  require('../bin');
 const coTape = require('co-tape');
 
 test('file download', coTape(function* (t) {
@@ -10,7 +10,7 @@ test('file download', coTape(function* (t) {
         src: (path.resolve('./img.png') )
     };
 
-    var filePath = (yield $download(file));
+    var filePath = (yield download(file));
     console.log(filePath);
 
     var passed = fs.existsSync(file.src);

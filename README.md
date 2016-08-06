@@ -8,18 +8,18 @@ Generator based, co/koa compatible file(s) downloader
 
 ```
 npm i rain-util-download
-var download = require('rain-util-download');
+const download = require('rain-util-download');
 
-var img = {
+cosnt img = {
     url: url of file you wish to download,
     src: tentative filename on local system
 }
 
-var downloadedImagePath = yield download({
+const downloadedImagePath = yield download({
     url: 'https://joyeur.files.wordpress.com/2011/07/nodejs.png',
     src: (path.resolve('./img.png') )
 })
-    
+
 also works when supplied an array
 ```
 
