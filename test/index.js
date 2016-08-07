@@ -1,20 +1,23 @@
 const test = require('tape-catch');
 const path = require('path');
 const fs = require('fs');
-const download =  require('../bin');
+const download = require('../bin');
 const coTape = require('co-tape');
+const debug = require('debug')('test');
 
-test('file download', coTape(function* (t) {
-    var file = {
-        url: 'https://joyeur.files.wordpress.com/2011/07/nodejs.png',
-        src: (path.resolve('./img.png') )
-    };
+function* fileDownload(t) {
+  const file = {
+    url: 'https://www.npmjs.com/static/images/npm-logo.svg',
+    src: (path.resolve('./npm-logo.svg'))
+  };
 
-    var filePath = (yield download(file));
-    console.log(filePath);
+  const filePath = (yield download(file));
+  debug(filePath);
 
-    var passed = fs.existsSync(file.src);
-    t[passed === true ? 'pass' : 'fail']('file download');
+  const passed = fs.existsSync(file.src);
+  t[passed === true ? 'pass' : 'fail']('file download');
 
-    t.end();
-}));
+  t.end();
+}
+
+test('file download', coTape(fileDownload));

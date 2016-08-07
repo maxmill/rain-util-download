@@ -1,6 +1,6 @@
 {
   "name": "rain-util-download",
-  "version": "0.4.0",
+  "version": "0.4.8",
   "author": "Max Millien",
   "description": "Generator based, co/koa compatible file(s) downloader",
   "repository": {
@@ -12,8 +12,9 @@
   "scripts": {
     "clean": "npm cache clean && rm -rf node_modules bin data",
     "build": "babel lib -d bin",
-    "lint":"eslint .",
-    "test": "npm run build && tape ./test"
+    "lint": "eslint . --fix",
+    "test": "npm run build && tape ./test",
+    "watch": "watch 'npm run build' lib test"
   },
   "keywords": [
     "koa",
@@ -28,10 +29,11 @@
     "convenience"
   ],
   "dependencies": {
+    "co-tape": "*",
+    "debug": "^2.2.0",
     "request": "2.x",
-    "thunkify-wrap": "1.x",
     "tape-catch": "1.x",
-    "co-tape": "*"
+    "thunkify-wrap": "1.x"
   },
   "devDependencies": {
     "babel": "*",
@@ -41,7 +43,8 @@
     "eslint": "^3.2.0",
     "eslint-config-airbnb-base": "^5.0.1",
     "eslint-plugin-import": "^1.12.0",
-    "tape": "4.x"
+    "tape": "4.x",
+    "watch": "^0.19.1"
   },
   "engines": {
     "node": ">= 4.2.0"

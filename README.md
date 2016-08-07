@@ -7,7 +7,7 @@
 Generator based, co/koa compatible file(s) downloader
 
 ```
-npm i rain-util-download
+npm i -S rain-util-download
 const download = require('rain-util-download');
 
 cosnt img = {
@@ -16,9 +16,9 @@ cosnt img = {
 }
 
 const downloadedImagePath = yield download({
-    url: 'https://joyeur.files.wordpress.com/2011/07/nodejs.png',
-    src: (path.resolve('./img.png') )
-})
+    url: 'https://www.npmjs.com/static/images/npm-logo.svg',
+    src: (path.resolve('./npm-logo.svg'))
+ })
 
 also works when supplied an array
 ```
